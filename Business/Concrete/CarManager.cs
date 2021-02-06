@@ -25,12 +25,26 @@ namespace Business.Concrete
             }
             else
                 Console.WriteLine("Hatalı bir giriş yaptınız. Lütfen tekrar deneyiniz.");
-
         }
 
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
+        }
+
+        public List<Car> GetAllByBrandId(int id)
+        {
+            return _carDal.GetAll(c => c.BrandId == id);
+        }
+
+        public List<Car> GetAllByColorId(int id)
+        {
+            return _carDal.GetAll(c => c.ColorId == id);
+        }
+
+        public List<Car> GetByDailyPrice(double min, double max)
+        {
+            return _carDal.GetAll(c => c.DailyPrice >= min && c.DailyPrice <= max);
         }
     }
 }
