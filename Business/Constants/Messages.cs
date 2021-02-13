@@ -20,5 +20,11 @@ namespace Business.Constants
         public static string ColorNameInvalid = "Renk ismi hatalı";
         public static string ColorAdded = "Renk ekleme işlemi başarılı";
         public static string ColorsListed = "Renkler listelendi";
+        internal static string UserAdded;
+        internal static string UsersListed;
+        internal static string CustomerAdded;
+        internal static string CustomersListed;
+        internal static string RentalAdded;
+        internal static string RentalsListed;
     }
 }
