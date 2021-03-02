@@ -23,5 +23,9 @@ namespace Business.Constants
         public static string CustomersListed = "Müşteriler Listelendi";
         public static string RentalAdded = "Kiralama Eklendi";
         public static string RentalsListed = "Kiralamalar Listelendi";
+        public static string CarImageAdded = "Araç Resmi Eklendi";
+        internal static string CarImageListed;
+        internal static string CarImageLimitExceeded;
+        internal static string CarImageNotFound;
     }
 }
