@@ -10,15 +10,16 @@ namespace Core.DataAccess.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
         where TEntity : class, IEntity, new()
-        where TContext: DbContext,new()
+        where TContext : DbContext, new()
     {
         public void Add(TEntity entity)
         {
+            //IDisposable pattern implementation of c# ARAŞTIR
             using (TContext context = new TContext())
             {
-                var addedEntity = context.Entry(entity);
-                addedEntity.State = EntityState.Added;
-                context.SaveChanges();
+                var addedEntity = context.Entry(entity); //eklenecek nesnenin referansı yakala
+                addedEntity.State = EntityState.Added; // Ekle
+                context.SaveChanges(); // Kaydet
             }
         }
 

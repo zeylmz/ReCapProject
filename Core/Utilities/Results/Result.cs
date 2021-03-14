@@ -1,10 +1,10 @@
-﻿using Core.Utilities.Results.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Utilities.Results.Concrete
+namespace Core.Utilities.Results
 {
+    //DON'T REPEAT YOURSELF
     public class Result : IResult
     {
         public Result(bool success, string message) : this(success)
@@ -12,12 +12,11 @@ namespace Core.Utilities.Results.Concrete
             Message = message;
         }
         public Result(bool success)
-        {
+        {            
             Success = success;
         }
 
         public bool Success { get; }
-
-        public string Message { get; }
+        public string Message { get; } //Get olanlar readonly bir yapıdadır. Const içerisinde set edilebilir.
     }
 }

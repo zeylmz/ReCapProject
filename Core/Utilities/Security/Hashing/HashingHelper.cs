@@ -26,14 +26,9 @@ namespace Core.Utilities.Security.Hashing
                     {
                         return false;
                     }
-                }
+                }                
             }
             return true;
-        }
-
-        public static bool VerifyPasswordHash(string password, object passwordHash, object passwordSalt)
-        {
-            throw new NotImplementedException();
         }
     }
 }

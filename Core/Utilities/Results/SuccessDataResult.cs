@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Utilities.Results.Concrete
+namespace Core.Utilities.Results
 {
     public class SuccessDataResult<T> : DataResult<T>
     {
-        public SuccessDataResult(T Data, string message) : base(Data, true, message)
+        public SuccessDataResult(T data, string message) : base(data, true, message)
         {
 
         }
-        public SuccessDataResult(T Data) : base(Data, true)
+
+        public SuccessDataResult(T data) : base(data, true)
         {
 
         }
+
         public SuccessDataResult(string message) : base(default, true, message)
         {
 
         }
+
         public SuccessDataResult() : base(default, true)
         {
 

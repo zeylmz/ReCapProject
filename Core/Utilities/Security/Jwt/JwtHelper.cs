@@ -8,8 +8,9 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Text;
 
-namespace Core.Utilities.Security.Jwt
+namespace Core.Utilities.Security.JWT
 {
     public class JwtHelper : ITokenHelper
     {
@@ -20,6 +21,7 @@ namespace Core.Utilities.Security.Jwt
         {
             Configuration = configuration;
             _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+
         }
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims)
         {
@@ -35,6 +37,7 @@ namespace Core.Utilities.Security.Jwt
                 Token = token,
                 Expiration = _accessTokenExpiration
             };
+
         }
 
         public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user,
@@ -58,6 +61,7 @@ namespace Core.Utilities.Security.Jwt
             claims.AddEmail(user.Email);
             claims.AddName($"{user.FirstName} {user.LastName}");
             claims.AddRoles(operationClaims.Select(c => c.Name).ToArray());
+
             return claims;
         }
     }
